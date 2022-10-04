@@ -1,0 +1,4 @@
+- name: Install Mariadb
+  ansible.builtin.yum:
+    name: mariadb
+    state: installed

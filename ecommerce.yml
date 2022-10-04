@@ -1,0 +1,5 @@
+- name: Ecommerce Setup
+  hosts: all
+  become: yes
+  roles:
+    - "{{ROLE_NAME}}"
