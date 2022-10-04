@@ -3,18 +3,3 @@
     name: mariadb-server
     state: installed
 
-- name: Install Mariadb Server Server and Python3 Dependency packages
-  ansible.builtin.dnf:
-    name: "{{item}}"
-    state: installed
-  loop:
-    - mysql-community-devel
-    - mysql-community-server
-    - gcc
-    - python36-devel
-
-- name: Start Mariadb Service
-  ansible.builtin.systemd:
-    name: mariadb
-    state: started
-    enabled: yes
