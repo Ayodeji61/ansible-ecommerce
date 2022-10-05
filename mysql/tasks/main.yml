@@ -16,7 +16,6 @@
     - gcc
     - python36-devel
 
-
 - name: Create my.cnf
   ansible.builtin.file:
     path: /etc/my.cnf
