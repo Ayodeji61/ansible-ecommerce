@@ -18,6 +18,8 @@
 
 - name: Create my.cnf
   ansible.builtin.shell: vi /etc/my.cnf
+  become_user: root
+
 
 
 - name: Start MySQL Service
