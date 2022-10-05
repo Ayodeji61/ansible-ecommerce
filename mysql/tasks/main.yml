@@ -37,7 +37,7 @@
   community.mysql.mysql_db:
     name: ecomdb
     state: present
-    login_unix_socket: /var/run/mysqld/mysqld.sock
+
 
 - name: Copy SQL File to reset password
   ansible.builtin.template:
