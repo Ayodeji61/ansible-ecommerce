@@ -16,10 +16,11 @@
     - gcc
     - python36-devel
 
-- name: Create my.cnf
-  ansible.builtin.shell: vi /etc/my.cnf
-  become_user: root
 
+- name: Create my.cnf
+  ansible.builtin.file:
+    path: /etc/my.cnf
+    state: touch
 
 
 - name: Start MySQL Service
