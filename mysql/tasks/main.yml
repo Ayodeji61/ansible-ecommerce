@@ -16,6 +16,10 @@
     - gcc
     - python36-devel
 
+- name: Create my.cnf
+  ansible.builtin.shell: vi /etc/my.cnf
+
+
 - name: Start MySQL Service
   ansible.builtin.systemd:
     name: mysqld
