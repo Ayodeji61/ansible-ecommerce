@@ -26,3 +26,15 @@
   ansible.builtin.pip:
     name: mysqlclient
     executable: pip3
+
+- name: Create a new database with name 'ecomdb'
+  community.mysql.mysql_db:
+    name: ecomdb
+    state: present
+    login_unix_socket: /run/mysqld/mysqld.sock
+
+- name: Copy SQL File to reset password
+  ansible.builtin.template:
+    src: create-user.sql
+    dest: /tmp/create-user.sql
+  when: mysql_conn_status is failed
